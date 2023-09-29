@@ -1,0 +1,47 @@
+:root {
+  --color-text: #140d26;
+  --color-bg: #efecf9;
+  --color-primary: #667e2a;
+  --color-secondary: #bee9ca;
+}
+
+.movie-tile {
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+
+  display: flex;
+  align-items: center;
+  font-family: "Avenir", sans-serif;
+  font-size: 16px;
+}
+
+.movie-tile > img {
+  height: 100px;
+}
+
+.movie-text {
+  margin-left: 8px;
+}
+
+.movie-year {
+  color: #454545;
+  font-size: 12px;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 720px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1023px) {
+  .movies {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
