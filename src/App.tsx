@@ -6,6 +6,7 @@ import { EmojiFrequency, Movie } from "./Movie";
 import { getFrequenciesFromMovies } from "./getFrequenciesFromMovies";
 import { MovieTile } from "./Components/MovieTile";
 import { ResultsText } from "./Components/ResultsText";
+import { Footer } from "./Components/Footer";
 
 function App() {
   const url = "https://cinemoji-backend.onrender.com";
@@ -85,6 +86,7 @@ function App() {
       <div className="tags">{emojiTags}</div>
       <ResultsText selectedEmojis={selectedEmojis} movieCount={movies.length} />
       <div className="movies">{movieSection}</div>
+      <Footer />
     </div>
   );
 }

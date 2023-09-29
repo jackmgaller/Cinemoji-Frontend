@@ -49,3 +49,10 @@ h1 {
 body {
   background-color: var(--color-bg);
 }
+
+footer {
+  margin-top: 32px;
+  font-family: "Avenir", "Helvetica", sans-serif;
+  text-align: center;
+  font-weight: bolder;
+}
