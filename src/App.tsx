@@ -11,7 +11,7 @@ import { Footer } from "./Components/Footer";
 function App() {
   const url = "https://cinemoji-backend.onrender.com";
 
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<Movie[] | null>(null);
   const [emojiFrequencies, setEmojiFrequencies] = useState<EmojiFrequency[]>([]);
 
   const [selectedEmojis, setSelectedEmojis] = useState<string[]>([]);
@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const newEmojiFrequencies = getFrequenciesFromMovies(movies);
+    const newEmojiFrequencies = getFrequenciesFromMovies(movies ?? []);
 
     setEmojiFrequencies(newEmojiFrequencies);
   }, [movies]);
@@ -76,15 +76,15 @@ function App() {
     );
   });
 
-  const movieSection = movies.map(movie => {
+  const movieSection = movies?.map(movie => {
     return <MovieTile movie={movie} />;
   });
 
   return (
     <div>
       <h1>🎞️ Cinemoji</h1>
-      <div className="tags">{emojiTags}</div>
-      <ResultsText selectedEmojis={selectedEmojis} movieCount={movies.length} />
+      {emojiFrequencies.length > 1 ? <div className="tags">{emojiTags}</div> : ""}
+      <ResultsText selectedEmojis={selectedEmojis} movieCount={movies?.length ?? null} />
       <div className="movies">{movieSection}</div>
       <Footer />
     </div>

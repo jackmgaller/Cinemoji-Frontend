@@ -10,7 +10,7 @@ export const ResultsText: FC<ResultsTextProps> = ({ movieCount, selectedEmojis }
   let innerText = "";
 
   if (movieCount === null) {
-    return null;
+    return <div className="results-text">Loading!</div>;
   } else if (selectedEmojis.length === 0) {
     return (
       <div className="results-text">Select some emojis to filter through {movieCount} movies!</div>
