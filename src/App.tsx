@@ -76,7 +76,7 @@ function App() {
     );
   });
 
-  const movieSection = movies?.map(movie => {
+  const movieSection = (movies ?? []).slice(0, 100).map(movie => {
     return <MovieTile movie={movie} />;
   });
 
