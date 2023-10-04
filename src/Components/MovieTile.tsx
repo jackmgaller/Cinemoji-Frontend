@@ -6,12 +6,9 @@ type MovieTileProps = {
 };
 
 export const MovieTile: React.FC<MovieTileProps> = ({ movie }) => {
-  const moviePosterLink = movie.posterLink.substring(15, movie.posterLink.indexOf('" '));
-
-  console.log(moviePosterLink);
   return (
     <span className="movie-tile">
-      <img src={moviePosterLink}></img>
+      <img src={movie.posterLink}></img>
       <div className="movie-text">
         <span>
           <span>{movie.title}</span>
